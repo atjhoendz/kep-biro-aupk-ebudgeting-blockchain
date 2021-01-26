@@ -10,31 +10,29 @@ export default [
       },
       {
         _name: 'CSidebarNavTitle',
-        _children: ['Laporan']
+        _children: ['Master']
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Laporan Lembaga',
-        to: '/laporan-lembaga',
-        icon: 'cil-building',
+        name: 'Data Pemohon',
+        to: '/data-pemohon',
+        icon: 'cil-user',
+      },
+      {
+        _name: 'CSidebarNavTitle',
+        _children: ['Grafik']
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Laporan Anggaran',
-        to: '/laporan-anggaran',
+        name: 'Grafik Anggaran',
+        to: '/grafik-anggaran',
         icon: 'cil-dollar',
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Laporan Estimasi',
-        to: '/laporan-estimasi',
-        icon: 'cil-wallet',
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Laporan Biaya Riil',
-        to: '/laporan-biaya-riil',
-        icon: 'cil-money',
+        name: 'Grafik Kegiatan',
+        to: '/grafik-kegiatan',
+        icon: 'cib-when-i-work',
       },
     ]
   }

@@ -35,6 +35,34 @@
             {{ index + 1 }}
           </td>
         </template>
+        <template #proses-terima="{index}">
+          <td>
+            <CButtonGroup>
+              <CButton color="success" size="sm" :to="terima(index)"
+                >Terima</CButton
+              >
+              <CButton color="danger" size="sm" :to="tolak(index)"
+                >Tolak</CButton
+              >
+            </CButtonGroup>
+          </td>
+        </template>
+        <template #bukti-spd>
+          <td>
+            <CSelect
+              :options="optionsBuktiSPD"
+              placeholder="Keterangan"
+              size="sm"
+            ></CSelect>
+          </td>
+        </template>
+        <template #proses-grafik="{index}">
+          <td>
+            <CButton color="secondary" size="sm" :to="detailGrafik(index)"
+              >Lihat Grafik</CButton
+            >
+          </td>
+        </template>
       </CDataTable>
     </CCardBody>
   </CCard>
@@ -64,10 +92,24 @@ export default {
       type: Array,
       required: true,
     },
+    optionsBuktiSPD: {
+      type: Array,
+    },
   },
   computed: {
     urlCetak: function() {
       return `/${this.routeEndpoint}/cetak`;
+    },
+  },
+  methods: {
+    terima(id) {
+      return `/${this.routeEndpoint}/terima?id=${id}`;
+    },
+    tolak(id) {
+      return `/${this.routeEndpoint}/tolak?id=${id}`;
+    },
+    detailGrafik(id) {
+      return `/${this.routeEndpoint}/detail-grafik?id=${id}`;
     },
   },
 };

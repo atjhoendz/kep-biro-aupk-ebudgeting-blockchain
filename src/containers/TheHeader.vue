@@ -11,10 +11,10 @@
       @click="$store.commit('toggleSidebarDesktop')"
     />
     <div class="ml-3 my-auto d-lg-none">
-      <span class="h5">Kepala Keuangan</span>
+      <span class="h5">Kep. Biro AUPK</span>
     </div>
     <CHeaderNav class="d-md-down-none ml-3">
-      <span class="h3 my-auto">Kepala Keuangan</span>
+      <span class="h3 my-auto">Kep. Biro AUPK</span>
     </CHeaderNav>
     <CHeaderNav class="mr-4 ml-auto">
       <TheHeaderDropdownAccnt />

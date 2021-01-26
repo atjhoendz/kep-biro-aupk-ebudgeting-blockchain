@@ -8,10 +8,11 @@ const TheContainer = () => import('@/containers/TheContainer')
 const Dashboard = () => import('@/views/Dashboard')
 const LoginPage = () => import('@/views/auth/LoginPage')
 
-const LaporanLembaga = () => import('@/views/LaporanLembaga')
-const LaporanAnggaran = () => import('@/views/LaporanAnggaran')
-const LaporanEstimasi = () => import('@/views/LaporanEstimasi')
-const LaporanBiayaRiil = () => import('@/views/LaporanBiayaRiil')
+const DataPemohon = () => import('@/views/DataPemohon')
+const GrafikAnggaran = () => import('@/views/GrafikAnggaran')
+
+const DaftarLembaga = () => import('@/views/grafik-kegiatan/DaftarLembaga')
+const DetailGrafikKegiatan = () => import('@/views/grafik-kegiatan/DetailGrafik')
 
 
 Vue.use(Router)
@@ -37,24 +38,31 @@ function configRoutes () {
           component: Dashboard
         },
         {
-          path: 'laporan-lembaga',
-          name: 'Laporan Lembaga',
-          component: LaporanLembaga
+          path: 'data-pemohon',
+          name: 'Data Pemohon',
+          component: DataPemohon
         },
         {
-          path: 'laporan-anggaran',
-          name: 'Laporan Anggaran',
-          component: LaporanAnggaran
+          path: 'grafik-anggaran',
+          name: 'Grafik Anggaran',
+          component: GrafikAnggaran
+        }
+      ]
+    },
+    {
+      path: '/grafik-kegiatan',
+      name: 'Grafik Kegiatan',
+      redirect: '/grafik-kegiatan',
+      component: TheContainer,
+      children: [
+        {
+          path: '/',
+          component: DaftarLembaga
         },
         {
-          path: 'laporan-estimasi',
-          name: 'Laporan Estimasi',
-          component: LaporanEstimasi
-        },
-        {
-          path: 'laporan-biaya-riil',
-          name: 'Laporan Biaya Riil',
-          component: LaporanBiayaRiil
+          path: 'detail-grafik',
+          name: 'Detail Grafik Anggaran Kegiatan',
+          component: DetailGrafikKegiatan
         }
       ]
     },

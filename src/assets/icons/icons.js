@@ -21,7 +21,8 @@ import {
   cibStripe,
   cibPaypal,
   cibGooglePay, 
-  cibCcAmex
+  cibCcAmex,
+  cibWhenIWork
 } from '@coreui/icons'
 import {
   cifUs,
@@ -89,6 +90,7 @@ export const iconsSet = Object.assign(
   {},
   { logo },
   {
+    cibWhenIWork,
     cilPrint,
     cilBuilding,
     cilWallet,

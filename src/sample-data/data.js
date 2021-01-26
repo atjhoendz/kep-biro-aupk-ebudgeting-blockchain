@@ -1,82 +1,3 @@
-export const itemsEstimasi = [{
-  "tanggal-berangkat": "12/30/2020",
-  "nama-pemohon": "Alta",
-  "dari-lembaga": "Skiba",
-  "jenis-pmk": "Audrye",
-  "asal": "Nepal",
-  "tujuan": "Philippines",
-  "banyak": 43,
-  "keterangan": "lorem ipsum",
-  "total": "74652401.79",
-  "status-pemohon": "thasyts"
-}, {
-  "tanggal-berangkat": "12/22/2020",
-  "nama-pemohon": "Ines",
-  "dari-lembaga": "Realpoint",
-  "jenis-pmk": "Neile",
-  "asal": "Brazil",
-  "tujuan": "Uganda",
-  "banyak": 24,
-  "keterangan": "lorem ipsum",
-  "total": "42717826.49",
-  "status-pemohon": "ivbveno"
-}, {
-  "tanggal-berangkat": "02/25/2020",
-  "nama-pemohon": "Brien",
-  "dari-lembaga": "Skinix",
-  "jenis-pmk": "Lucie",
-  "asal": "Indonesia",
-  "tujuan": "China",
-  "banyak": 74,
-  "keterangan": "lorem ipsum",
-  "total": "27809696.05",
-  "status-pemohon": "tjqddwy"
-}, {
-  "tanggal-berangkat": "04/30/2020",
-  "nama-pemohon": "Mirilla",
-  "dari-lembaga": "Tagopia",
-  "jenis-pmk": "Cathlene",
-  "asal": "Malaysia",
-  "tujuan": "Argentina",
-  "banyak": 44,
-  "keterangan": "lorem ipsum",
-  "total": "82097313.10",
-  "status-pemohon": "fseocka"
-}, {
-  "tanggal-berangkat": "02/14/2020",
-  "nama-pemohon": "Worthy",
-  "dari-lembaga": "Jatri",
-  "jenis-pmk": "Randy",
-  "asal": "Dominican Republic",
-  "tujuan": "China",
-  "banyak": 27,
-  "keterangan": "lorem ipsum",
-  "total": "99650380.40",
-  "status-pemohon": "yynywsg"
-}, {
-  "tanggal-berangkat": "09/22/2020",
-  "nama-pemohon": "Eugenius",
-  "dari-lembaga": "Gabspot",
-  "jenis-pmk": "Florence",
-  "asal": "Ukraine",
-  "tujuan": "Russia",
-  "banyak": 73,
-  "keterangan": "lorem ipsum",
-  "total": "67290016.73",
-  "status-pemohon": "fghwipw"
-}, {
-  "tanggal-berangkat": "01/30/2020",
-  "nama-pemohon": "Liam",
-  "dari-lembaga": "Livetube",
-  "jenis-pmk": "Elfrieda",
-  "asal": "Sierra Leone",
-  "tujuan": "China",
-  "banyak": 96,
-  "keterangan": "lorem ipsum",
-  "total": "75601881.56",
-  "status-pemohon": "hepwscs"
-}]
-
 export const itemsLembaga = [{
   "nama-lembaga": "Sybilla",
   "jumlah-anggaran": "27711321.53"
@@ -100,90 +21,78 @@ export const itemsLembaga = [{
   "jumlah-anggaran": "97144351.43"
 }]
 
-export const itemsAnggaran = [{
-  "nama-lembaga": "Sybilla",
-  "sisa-anggaran": "27711321.53"
+export const itemsKegiatan = [{
+  "nama-kegiatan": "Sybilla",
+  "anggaran": "27711321.53"
 }, {
-  "nama-lembaga": "Andonis",
-  "sisa-anggaran": "28607548.38"
+  "nama-kegiatan": "Andonis",
+  "anggaran": "28607548.38"
 }, {
-  "nama-lembaga": "Domenic",
-  "sisa-anggaran": "69509997.68"
-}, {
-  "nama-lembaga": "Chevy",
-  "sisa-anggaran": "98056200.89"
-}, {
-  "nama-lembaga": "Cassandry",
-  "sisa-anggaran": "98027809.69"
-}, {
-  "nama-lembaga": "Christi",
-  "sisa-anggaran": "78608410.24"
-}, {
-  "nama-lembaga": "Augusta",
-  "sisa-anggaran": "97144351.43"
+  "nama-kegiatan": "Domenic",
+  "anggaran": "69509997.68"
 }]
 
-export const itemsBiayaRiil = [{
-  "tanggal-berangkat": "12/30/2020",
-  "nama-pemohon": "Alta",
-  "dari-lembaga": "Skiba",
-  "jenis-pmk": "Audrye",
-  "asal": "Nepal",
-  "tujuan": "Philippines",
-  "keterangan": "lorem ipsum",
-  "biaya-riil": "74652401.79",
+export const itemsPemohon = [{
+  "nama": "Jemmy",
+  "dari-lembaga": "Shufflebeat",
+  "no-spd": 696802,
+  "nip": 1809810,
+  "golongan": "Pall",
+  "jabatan": "Jud",
+  "status-spd": "Ilyse",
+  "status-permohonan": "Ola"
 }, {
-  "tanggal-berangkat": "12/22/2020",
-  "nama-pemohon": "Ines",
-  "dari-lembaga": "Realpoint",
-  "jenis-pmk": "Neile",
-  "asal": "Brazil",
-  "tujuan": "Uganda",
-  "keterangan": "lorem ipsum",
-  "biaya-riil": "42717826.49",
+  "nama": "Melina",
+  "dari-lembaga": "Buzzdog",
+  "no-spd": 914439,
+  "nip": 4989747,
+  "golongan": "Tracee",
+  "jabatan": "Hartley",
+  "status-spd": "Babs",
+  "status-permohonan": "Mignonne"
 }, {
-  "tanggal-berangkat": "02/25/2020",
-  "nama-pemohon": "Brien",
-  "dari-lembaga": "Skinix",
-  "jenis-pmk": "Lucie",
-  "asal": "Indonesia",
-  "tujuan": "China",
-  "keterangan": "lorem ipsum",
-  "biaya-riil": "27809696.05",
+  "nama": "Wilmette",
+  "dari-lembaga": "Demivee",
+  "no-spd": 930332,
+  "nip": 2774139,
+  "golongan": "Bennie",
+  "jabatan": "Maxi",
+  "status-spd": "Lorne",
+  "status-permohonan": "Jobi"
 }, {
-  "tanggal-berangkat": "04/30/2020",
-  "nama-pemohon": "Mirilla",
-  "dari-lembaga": "Tagopia",
-  "jenis-pmk": "Cathlene",
-  "asal": "Malaysia",
-  "tujuan": "Argentina",
-  "keterangan": "lorem ipsum",
-  "biaya-riil": "82097313.10",
+  "nama": "Rayna",
+  "dari-lembaga": "Zooxo",
+  "no-spd": 702474,
+  "nip": 346857,
+  "golongan": "Madelle",
+  "jabatan": "Hally",
+  "status-spd": "Yancy",
+  "status-permohonan": "Wenona"
 }, {
-  "tanggal-berangkat": "02/14/2020",
-  "nama-pemohon": "Worthy",
-  "dari-lembaga": "Jatri",
-  "jenis-pmk": "Randy",
-  "asal": "Dominican Republic",
-  "tujuan": "China",
-  "keterangan": "lorem ipsum",
-  "biaya-riil": "99650380.40",
+  "nama": "Ber",
+  "dari-lembaga": "Yozio",
+  "no-spd": 170614,
+  "nip": 7434693,
+  "golongan": "Chuck",
+  "jabatan": "Rochester",
+  "status-spd": "Gabby",
+  "status-permohonan": "Keri"
 }, {
-  "tanggal-berangkat": "09/22/2020",
-  "nama-pemohon": "Eugenius",
-  "dari-lembaga": "Gabspot",
-  "jenis-pmk": "Florence",
-  "asal": "Ukraine",
-  "tujuan": "Russia",
-  "keterangan": "lorem ipsum",
-  "biaya-riil": "67290016.73",
+  "nama": "Alexis",
+  "dari-lembaga": "Eimbee",
+  "no-spd": 718478,
+  "nip": 2730408,
+  "golongan": "Dolorita",
+  "jabatan": "Caron",
+  "status-spd": "Alverta",
+  "status-permohonan": "Harley"
 }, {
-  "tanggal-berangkat": "01/30/2020",
-  "nama-pemohon": "Liam",
-  "dari-lembaga": "Livetube",
-  "jenis-pmk": "Elfrieda",
-  "asal": "Sierra Leone",
-  "tujuan": "China",
-  "keterangan": "lorem ipsum",
-  "biaya-riil": "75601881.56",
+  "nama": "Dannel",
+  "dari-lembaga": "Lajo",
+  "no-spd": 462502,
+  "nip": 3126718,
+  "golongan": "Clerkclaude",
+  "jabatan": "Vladamir",
+  "status-spd": "Freeman",
+  "status-permohonan": "Welby"
 }]
