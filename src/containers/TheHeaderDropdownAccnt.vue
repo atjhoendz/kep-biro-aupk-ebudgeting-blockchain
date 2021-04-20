@@ -1,8 +1,12 @@
 <template>
   <CDropdown inNav class="c-header-nav-items" placement="bottom">
     <template #toggler-content>
-      <span class="h4 d-md-down-none" style="color: #3c4b64">Armando</span>
-      <span class="h6 d-lg-none" style="color: #3c4b64">Armando</span>
+      <span class="h4 d-md-down-none" style="color: #3c4b64">{{
+        $store.state.user.currentUser.username
+      }}</span>
+      <span class="h6 d-lg-none" style="color: #3c4b64">{{
+        $store.state.user.currentUser.username
+      }}</span>
     </template>
     <CDropdownItem to="/login">
       <CIcon name="cil-lock-locked" /> Logout
@@ -12,13 +16,11 @@
 
 <script>
 export default {
-  name: "TheHeaderDropdownAccnt",
+  name: 'TheHeaderDropdownAccnt',
   data() {
-    return {
-      itemsCount: 42,
-    };
+    return {}
   },
-};
+}
 </script>
 
 <style scoped>
