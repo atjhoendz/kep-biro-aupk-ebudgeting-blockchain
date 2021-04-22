@@ -12,6 +12,8 @@ const DaftarLembaga = () => import('@/views/grafik-kegiatan/DaftarLembaga')
 const DetailGrafikKegiatan = () =>
   import('@/views/grafik-kegiatan/DetailGrafik')
 
+const NotFoundPage = () => import('@/views/NotFoundPage')
+
 export const routes = [
   {
     path: '/',
@@ -49,7 +51,7 @@ export const routes = [
         component: DaftarLembaga,
       },
       {
-        path: 'detail-grafik',
+        path: 'detail-grafik/:key',
         name: 'Detail Grafik Anggaran Kegiatan',
         component: DetailGrafikKegiatan,
       },
@@ -59,5 +61,10 @@ export const routes = [
     path: '/login',
     name: 'Login',
     component: LoginPage,
+  },
+  {
+    path: '*',
+    name: 'NotFoundPage',
+    component: NotFoundPage,
   },
 ]
