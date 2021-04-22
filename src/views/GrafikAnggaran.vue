@@ -60,15 +60,7 @@
 import ToastMsg from '../components/ToastMsg'
 import { AnggaranService } from '../services/anggaran.service'
 import { fieldsGrafikAnggaran } from './fields'
-
-const generateColor = jumlah => {
-  let colors = []
-  for (let i = 0; i < jumlah; i++) {
-    let color = `#${Math.floor(Math.random() * 16777215).toString(16)}`
-    colors.push(color)
-  }
-  return colors
-}
+import { generateColor } from './utils'
 
 export default {
   name: 'GrafikAnggaran',
