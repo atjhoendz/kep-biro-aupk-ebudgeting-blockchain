@@ -20,3 +20,12 @@ export const optionsBuktiSPD = [
   { label: 'Ada', value: 'ada' },
   { label: 'Tidak Ada', value: 'tidak ada' },
 ]
+
+export const fieldsGrafikAnggaran = [
+  { key: 'nama', label: 'Nama Lembaga', _style: 'text-align:center' },
+  {
+    key: 'jumlahAnggaranAsCurrency',
+    label: 'Anggaran Lembaga',
+    _style: 'text-align:center',
+  },
+]

@@ -10,89 +10,127 @@
             <CChartBar
               :datasets="datasets"
               :labels="labels"
-              :options="{ aspectRatio: 3 }"
+              :options="{
+                aspectRatio: 3,
+                legend: {
+                  display: false,
+                },
+                title: {
+                  display: true,
+                  text: 'Grafik Anggaran',
+                  fontColor: '#3c4b64',
+                  fontSize: 18,
+                },
+              }"
               class="d-md-down-none"
             />
             <CChartBar
               :datasets="datasets"
               :labels="labels"
               class="d-lg-none"
+              :options="{
+                legend: {
+                  display: false,
+                },
+                title: {
+                  display: true,
+                  text: 'Grafik Anggaran',
+                  fontColor: '#3c4b64',
+                  fontSize: 14,
+                },
+              }"
             />
           </div>
           <CDataTable
             :items="itemsLembaga"
-            :fields="fields"
+            :fields="fieldsGrafikAnggaran"
             hover
             border
             class="mt-5 text-center"
+            :loading="isLoading"
           ></CDataTable>
         </CCardBody>
       </CCard>
     </CCol>
+    <toast-msg :listToasts="listToasts" />
   </CRow>
 </template>
 
 <script>
-import { itemsLembaga } from "../sample-data/data";
+import ToastMsg from '../components/ToastMsg'
+import { AnggaranService } from '../services/anggaran.service'
+import { fieldsGrafikAnggaran } from './fields'
 
-// const generateColor = (jumlah) => {
-//   let colors = [];
-//   for (let i = 0; i < jumlah; i++) {
-//     let color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-//     colors.push(color);
-//   }
-//   return colors;
-// };
-
-const data = itemsLembaga.map((item) => {
-  return item["jumlah-anggaran"];
-});
-
-const labels = itemsLembaga.map((item) => {
-  return item["nama-lembaga"];
-});
-
-const backgroundColor = [
-  "#e9ad10",
-  "#1a2eaa",
-  "#fb6a25",
-  "#d974d9",
-  "#137ce2",
-  "#7b310a",
-  "#16beb5",
-];
-
-const datasets = [
-  {
-    label: "Anggaran",
-    data: data,
-    backgroundColor: backgroundColor,
-    borderWidth: 1,
-  },
-];
-
-// console.log(generateColor(data.length));
-
-const fields = [
-  { key: "nama-lembaga", _style: "text-align:center" },
-  {
-    key: "jumlah-anggaran",
-    label: "Anggaran Lembaga",
-    _style: "text-align:center",
-  },
-];
+const generateColor = jumlah => {
+  let colors = []
+  for (let i = 0; i < jumlah; i++) {
+    let color = `#${Math.floor(Math.random() * 16777215).toString(16)}`
+    colors.push(color)
+  }
+  return colors
+}
 
 export default {
-  name: "GrafikAnggaran",
+  name: 'GrafikAnggaran',
+  components: { ToastMsg },
   data() {
     return {
-      datasets,
-      labels,
-      itemsLembaga,
-      fields,
-    };
+      labels: [],
+      itemsLembaga: [],
+      fieldsGrafikAnggaran,
+      listToasts: [],
+      isLoading: false,
+      dataAnggaran: [],
+      datasets: [],
+    }
   },
-};
+  methods: {
+    async getDataLembaga() {
+      this.isLoading = true
+      try {
+        const dataLembaga = await AnggaranService.getDataLembaga()
+
+        this.itemsLembaga = dataLembaga.map(item => {
+          return {
+            key: item.Key,
+            jumlahAnggaranAsCurrency: parseInt(
+              item.Record.jumlah_anggaran
+            ).toLocaleString('id', {
+              style: 'currency',
+              currency: 'IDR',
+            }),
+            ...item.Record,
+          }
+        })
+
+        const dataAnggaran = dataLembaga.map(item => {
+          return item.Record.jumlah_anggaran
+        })
+
+        this.labels = dataLembaga.map(item => {
+          return item.Record.nama
+        })
+
+        const itemSet = {
+          data: dataAnggaran,
+          borderWidth: 1,
+          backgroundColor: generateColor(dataAnggaran.length),
+          highlightFill: '#fff',
+        }
+        this.$set(this.datasets, 0, itemSet)
+      } catch (err) {
+        this.listToasts.push({
+          message: 'Terjadi masalah. Data anggaran tidak berhasil didapatkan.',
+          color: 'danger',
+        })
+      }
+      this.isLoading = false
+    },
+  },
+  async mounted() {
+    await this.getDataLembaga()
+  },
+}
 </script>
 
 <style></style>
