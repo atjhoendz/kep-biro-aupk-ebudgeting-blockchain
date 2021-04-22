@@ -2,19 +2,10 @@
   <CCard>
     <CCardHeader class="d-flex">
       <span class="h4 mr-auto my-auto">{{ title }}</span>
-      <CButton
-        v-if="showButton"
-        color="primary"
-        class="d-md-down-none"
-        :to="urlCetak"
+      <CButton v-if="showButton" color="primary" class="d-md-down-none"
         >Cetak</CButton
       >
-      <CButton
-        v-if="showButton"
-        color="primary"
-        class="d-lg-none"
-        :to="urlCetak"
-      >
+      <CButton v-if="showButton" color="primary" class="d-lg-none">
         <CIcon name="cil-print" />
       </CButton>
     </CCardHeader>
@@ -29,31 +20,21 @@
         sorter
         pagination
         border
+        :loading="isLoading"
       >
         <template #no="{index}">
           <td>
             {{ index + 1 }}
           </td>
         </template>
-        <template #proses-terima="{index}">
-          <td>
-            <CButtonGroup>
-              <CButton color="success" size="sm" :to="terima(index)"
-                >Terima</CButton
-              >
-              <CButton color="danger" size="sm" :to="tolak(index)"
-                >Tolak</CButton
-              >
-            </CButtonGroup>
+        <template #proses-terima="{item}">
+          <td class="text-center">
+            <slot name="proses-terima" :item="item"></slot>
           </td>
         </template>
-        <template #bukti-spd>
+        <template #pilih_spd="{item}">
           <td>
-            <CSelect
-              :options="optionsBuktiSPD"
-              placeholder="Keterangan"
-              size="sm"
-            ></CSelect>
+            <slot name="pilih_spd" :item="item"></slot>
           </td>
         </template>
         <template #proses-grafik="{index}">
@@ -70,7 +51,7 @@
 
 <script>
 export default {
-  name: "CardListData",
+  name: 'CardListData',
   props: {
     title: {
       type: String,
@@ -92,27 +73,22 @@ export default {
       type: Array,
       required: true,
     },
-    optionsBuktiSPD: {
-      type: Array,
+    isLoading: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
     urlCetak: function() {
-      return `/${this.routeEndpoint}/cetak`;
+      return `/${this.routeEndpoint}/cetak`
     },
   },
   methods: {
-    terima(id) {
-      return `/${this.routeEndpoint}/terima?id=${id}`;
-    },
-    tolak(id) {
-      return `/${this.routeEndpoint}/tolak?id=${id}`;
-    },
     detailGrafik(id) {
-      return `/${this.routeEndpoint}/detail-grafik?id=${id}`;
+      return `/${this.routeEndpoint}/detail-grafik?id=${id}`
     },
   },
-};
+}
 </script>
 
 <style></style>
