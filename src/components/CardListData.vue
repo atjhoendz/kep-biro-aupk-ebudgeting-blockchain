@@ -37,11 +37,9 @@
             <slot name="pilih_spd" :item="item"></slot>
           </td>
         </template>
-        <template #proses-grafik="{index}">
-          <td>
-            <CButton color="secondary" size="sm" :to="detailGrafik(index)"
-              >Lihat Grafik</CButton
-            >
+        <template #proses-grafik="{item}">
+          <td class="text-center">
+            <slot name="proses-grafik" :item="item"></slot>
           </td>
         </template>
       </CDataTable>
@@ -81,11 +79,6 @@ export default {
   computed: {
     urlCetak: function() {
       return `/${this.routeEndpoint}/cetak`
-    },
-  },
-  methods: {
-    detailGrafik(id) {
-      return `/${this.routeEndpoint}/detail-grafik?id=${id}`
     },
   },
 }

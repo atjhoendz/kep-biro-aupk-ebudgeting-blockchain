@@ -15,4 +15,16 @@ export class AnggaranService {
       throw err
     }
   }
+
+  static async getDataBiayaRiilByLembaga(key) {
+    try {
+      const response = await axiosService.get(
+        `${this.entity}/biaya-riil/${key}`
+      )
+
+      return response.data.data
+    } catch (err) {
+      throw err
+    }
+  }
 }

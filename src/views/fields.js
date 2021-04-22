@@ -29,3 +29,19 @@ export const fieldsGrafikAnggaran = [
     _style: 'text-align:center',
   },
 ]
+
+export const fieldsDaftarLembaga = [
+  { key: 'no', label: 'No.', _style: 'width:10px' },
+  { key: 'nama', label: 'Nama Lembaga' },
+  { key: 'jumlah_anggaran' },
+  { key: 'proses-grafik', label: 'Proses', _style: 'text-align:center' },
+]
+
+export const fieldsDetailLembaga = [
+  { key: 'nama_kegiatan', label: 'Nama Kegiatan', _style: 'text-align:center' },
+  {
+    key: 'anggaran',
+    label: 'Anggaran',
+    _style: 'text-align:center',
+  },
+]
