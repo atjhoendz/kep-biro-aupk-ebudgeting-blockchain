@@ -108,6 +108,7 @@ export default {
         })
 
         if (result == 401) {
+          this.isLoading = false
           return (this.message =
             'Login tidak berhasil. Anda tidak memiliki hak akses.')
         }
