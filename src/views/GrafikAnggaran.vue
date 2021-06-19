@@ -21,6 +21,16 @@
                   fontColor: '#3c4b64',
                   fontSize: 18,
                 },
+                scales: {
+                  yAxes: [
+                    {
+                      display: true,
+                      ticks: {
+                        beginAtZero: true,
+                      },
+                    },
+                  ],
+                },
               }"
               class="d-md-down-none"
             />
